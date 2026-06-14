@@ -42,8 +42,36 @@
   .scroll-hint { font-size: 13px; color: var(--ink-faint); display: flex; flex-direction: column; align-items: center; gap: 8px; animation: bounce 2s ease-in-out infinite; }
   @keyframes bounce { 0%,100%{transform:translateY(0)} 50%{transform:translateY(6px)} }
 
-  .song-strip { background: var(--ink); color: rgba(255,255,255,0.85); padding: 1.25rem 1.5rem; text-align: center; font-family: 'Lora', serif; font-style: italic; font-size: 14px; line-height: 1.9; }
-  .song-title { color: var(--accent); font-style: normal; font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; display: block; margin-bottom: 6px; }
+  .song-strip {
+    background: var(--ink);
+    color: rgba(255,255,255,0.88);
+    padding: 1.4rem 1.5rem;
+    text-align: center;
+    font-family: 'Lora', serif;
+    overflow: hidden;
+  }
+
+  .song-title {
+    color: var(--accent);
+    font-style: normal;
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 0.9rem;
+    opacity: 0.85;
+  }
+
+  .song-lines {
+    min-height: 52px;
+  }
+
+  .song-lines p {
+    font-size: 15px;
+    line-height: 1.9;
+    font-style: italic;
+    transition: opacity 0.4s ease;
+  }
 
   .timeline-section { max-width: 720px; margin: 0 auto; padding: 4rem 1.5rem 2rem; }
   .section-label { font-size: 11px; font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase; color: var(--ink-faint); margin-bottom: 2.5rem; text-align: center; }
@@ -133,9 +161,14 @@
 </section>
 
 <div class="song-strip">
-  <span class="song-title">arz kiya hai &nbsp;·&nbsp; khat &nbsp;·&nbsp; our songs, always ♪</span>
-  "तेरे बिना मैं कुछ भी नहीं, कुछ भी नहीं यारा..."<br>
-  "तुझको लिखी है ये कहानी, कहानी मेरी..."
+  <span class="song-title" id="song-title">
+    our songs, always ♪
+  </span>
+
+  <div class="song-lines">
+    <p id="song-line-1"></p>
+    <p id="song-line-2"></p>
+  </div>
 </div>
 
 <div class="timeline-section">
@@ -338,8 +371,41 @@ I still laugh thinking about that line. Guess where I said it chal.`,
   }
 ];
 
+var songLyrics = [
+  {
+    title: "tu aisa kaise hai ♪",
+    line1: "तेरे साथ सब कुछ इतना आसान कैसे है?",
+    line2: "मुझे अपना घर मिल जाता है तुझ में..."
+  },
+
+  {
+    title: "arz kiya hai ♪",
+    line1: "तेरे बिना मैं कुछ भी नहीं, कुछ भी नहीं यारा...",
+    line2: "तुझको लिखी है ये कहानी, कहानी मेरी..."
+  },
+
+  {
+    title: "khat ♪",
+    line1: "जो तेरे संग बीती वो शामें मेरी...",
+    line2: "लिख रहा हूँ आज फिर तुझे..."
+  }
+];
+
 function render() {
   var today = getToday();
+
+  // Song strip logic
+  var songIndex = Math.abs(daysDiff(today, new Date("2026-06-27"))) % songLyrics.length;
+  var currentSong = songLyrics[songIndex];
+
+  var titleEl = document.getElementById("song-title");
+  var line1El = document.getElementById("song-line-1");
+  var line2El = document.getElementById("song-line-2");
+
+  if (titleEl) titleEl.textContent = currentSong.title;
+  if (line1El) line1El.textContent = currentSong.line1;
+  if (line2El) line2El.textContent = currentSong.line2;
+
   var container = document.getElementById("days-container");
   container.innerHTML = "";
 
