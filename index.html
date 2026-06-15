@@ -42,36 +42,8 @@
   .scroll-hint { font-size: 13px; color: var(--ink-faint); display: flex; flex-direction: column; align-items: center; gap: 8px; animation: bounce 2s ease-in-out infinite; }
   @keyframes bounce { 0%,100%{transform:translateY(0)} 50%{transform:translateY(6px)} }
 
-  .song-strip {
-    background: var(--ink);
-    color: rgba(255,255,255,0.88);
-    padding: 1.4rem 1.5rem;
-    text-align: center;
-    font-family: 'Lora', serif;
-    overflow: hidden;
-  }
-
-  .song-title {
-    color: var(--accent);
-    font-style: normal;
-    font-size: 11px;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    display: block;
-    margin-bottom: 0.9rem;
-    opacity: 0.85;
-  }
-
-  .song-lines {
-    min-height: 52px;
-  }
-
-  .song-lines p {
-    font-size: 15px;
-    line-height: 1.9;
-    font-style: italic;
-    transition: opacity 0.4s ease;
-  }
+  .song-strip { background: var(--ink); color: rgba(255,255,255,0.85); padding: 1.25rem 1.5rem; text-align: center; font-family: 'Lora', serif; font-style: italic; font-size: 14px; line-height: 1.9; }
+  .song-title { color: var(--accent); font-style: normal; font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; display: block; margin-bottom: 6px; }
 
   .timeline-section { max-width: 720px; margin: 0 auto; padding: 4rem 1.5rem 2rem; }
   .section-label { font-size: 11px; font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase; color: var(--ink-faint); margin-bottom: 2.5rem; text-align: center; }
@@ -161,14 +133,9 @@
 </section>
 
 <div class="song-strip">
-  <span class="song-title" id="song-title">
-    our songs, always ♪
-  </span>
-
-  <div class="song-lines">
-    <p id="song-line-1"></p>
-    <p id="song-line-2"></p>
-  </div>
+  <span class="song-title">arz kiya hai &nbsp;·&nbsp; khat &nbsp;·&nbsp; our songs, always ♪</span>
+  "तेरे बिना मैं कुछ भी नहीं, कुछ भी नहीं यारा..."<br>
+  "तुझको लिखी है ये कहानी, कहानी मेरी..."
 </div>
 
 <div class="timeline-section">
@@ -179,8 +146,8 @@
 <footer class="footer">
   <p class="footer-title">I'll be home before you know it.</p>
   <p class="footer-sub">
-    And when I’m back bubu, I already know what’s going to happen.<br>
-    You’re going to sit with that curious face and make me tell you every tiny detail from the trip properly 😭
+    And I'll talk your ears off about every single thing.<br>
+    You're going to have to tell me to stop. You won't though.
   </p>
   <div class="sunshine-verse">
     You are my sunshine, my only sunshine<br>
@@ -220,21 +187,13 @@ var days = [
     dateObj: new Date("2026-06-27"),
     location: "Sangla Valley",
     signal: true,
-    teaser: "First morning in the mountains. Might still have signal today — so if you got a random text at 7am, that was me. Ofc aadat hain na tumko subeh pareshaan karne ki",
-    note: `<p>So. Sangla. I will probably have some signal today and by the time you're reading this I've already texted you something completely unhinged, blabbered somthing hihihi </p>
-<p>But here's what I'm guessing the morning looks like from everything I've read: the Baspa river will probably be this turquoise green(AI hain mujhe ghanta nahi pata ye konsa colour hain) 
-  that doesn't feel real — like someone decided water should be that colour and didn't consult anyone (waah kya fek raha hain). Pine forests going up both sides. Snow on the peaks. 
-  The kind of silence that isn't quiet, it just sounds different. (full Kevindra Chopra vibes, aake batata hoon aise he tha kya tho)</p>
-<p>I'm going to stand there and think you need to see this. fr. Specifically you. Not in a general "this is beautiful" way — in the very specific way where 
-  I know you'd go completely quiet for a full minute and I'd watch you instead of the view. The same we we watched the Sunset together and I wanted you ;) </p>`,
-    wish: `Bubu, I wish you were here so I could see your face when you first see this valley. Bas itna hain.. thats the whole wish`,
-    memory: `Talking about first days, tumko yaad hain the time we landed in Udaipur, and they we started the non chalant bag uthane ka challange. maza aa gaya tha aate he masti chalu.<br><br>
-    And then literally before even properly reaching Udaipur, hume kachori khaani hain. My baby looked sooo happy eating that kachori. funnn <br><br>
-    Which reminds me, the kachori your roommate brought from Jodhpur, jo tumne mujhe apne haatho se khilayi thi... 
-    ofc it tasted better because you were feeding me and not because of any actual cooking skill involved, ofc ofc.`,
-    mission: `Your mission: chalo batao which is the joke you laughed the most at in Udaipur, (saying YOU is not allowed, please dimag par zor daalo huhh) <br><br>
-    Also, send me a picture of carnation I got you koi bhi kitna bhi purana (heartbreak if you don't have one) Nahi hua toh buy one for you and send a pic. Keep watering mai aane tak zinda rakho usse hehe`,
-    photo: "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1400&q=80",
+    teaser: "First morning in the mountains. Might still have signal today — so if you got a random text at 6am, that was me.",
+    note: `<p>So. Sangla. I will probably have some signal today and by the time you're reading this I've already texted you something completely unhinged. Ignore it. Or don't. Up to you.</p>
+<p>But here's what I'm guessing the morning looks like from everything I've read: the Baspa river will probably be this turquoise-green that doesn't feel real — like someone decided water should be that colour and didn't consult anyone. Pine forests going up both sides. Snow on the peaks. The kind of silence that isn't quiet, it just sounds different.</p>
+<p>I'm going to stand there and think you need to see this. Specifically you. Not in a general "this is beautiful" way — in the very specific way where I know you'd go completely quiet for a full minute and I'd watch you instead of the view.</p>`,
+    wish: `I wish you were here so I could see your face when you first see this valley. That's it. That's the whole wish.`,
+    memory: `Remember that Udaipur evening — you said "right here!" on the scooty with full and complete confidence and we turned right and it was very much not a road, it was just Udaipur's entire gali system. I think about that every single time someone gives me directions. Which is often. And I always think of you.`,
+    mission: `Your mission: find that carnation I got you — if it's still alive, put it somewhere you'll see it today. If it's wilted (honestly fair), go buy one, take a picture, and send it to me. I'll see it when I'm back and I will be very smug about it.`
   },
   {
     day: 2,
@@ -242,21 +201,13 @@ var days = [
     dateObj: new Date("2026-06-28"),
     location: "Chitkul & Kalpa",
     signal: false,
-    teaser: "Signal dies after Kalpa. So this is where I officially disappear. Don't panic sshhhhhh. Bich bich me aayega signal I hope tumko pareshaan karne",
-    note: `<p>Chitkul is the last inhabited village before the Tibet border. There's a signboard that literally says it. 
-      I'll probably stand there thinking, oh this is the edge of India and I will have the muffler you made me, which I'm very much wearing because it's freezing, and that'll make it better. 
-      It will give me the feelin of having you around me</p>
-
-<p>Kalpa in the evening has Kinnaur Kailash right across the valley, this massive wall of snow and rock that just <em>appears</em> when the clouds shift ( I hope shift ho jaaye varna toh Mandalpatti moment). 
-  Apparently the mountains turn orange then pink then purple at sunset (you know the gist right, after part of sunset). 
-  I would be lying if I said I won't be missing you in that very moment. I'll be standing there in the muffler you made me, watching a mountain turn colours and thinking about you. 
-  You did this. You made me sentimental about sunsets baby.</p>`,
-    wish: `I wish I could call you right now and just turn the camera around. No explanation. Just look at this. You'd get it.`,
-    memory: `Inhabited se yaad aaya, the soy milk spaghetti from chef Ita, because why not, bechari baby was soo irritated ye kya bana diya, picky eater is what we got from that dish lol.
-  I’ll also be missing your aglio olio spaghetti, just so you know. jald he aake khaunga tere haathon se..`,
-    mission: `Make spaghetti. Whenever you feel like it, today, tomorrow, whenever. Your way. Send me a picture. 
-    I will see it when I'm back and I will be jealous, and I will not say I'm jealous, and you will know anyway.`,
-    photo: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1400&q=80",
+    teaser: "Signal dies after Kalpa. So this is where I officially disappear. Don't panic.",
+    note: `<p>Chitkul is the last inhabited village before the Tibet border. There's a signboard that literally says it. I'll probably stand there thinking — this is the edge of India — and then think about the muffler you made me, which I'm very much wearing because it's freezing, and that'll make it better.</p>
+<p>I'll also be missing Nutcracker's spaghetti, just so you know. And also that soy milk spaghetti you made — okay yes it got spoiled but the <em>intention</em> was so good. The intention was 10/10.</p>
+<p>Kalpa in the evening has Kinnaur Kailash right across the valley — this massive wall of snow and rock that just <em>appears</em> when the clouds shift. Apparently the mountains turn orange then pink then purple at sunset. I'll be standing there in your muffler watching a mountain turn colours and thinking about you. You did this. You made me sentimental about mountains.</p>`,
+    wish: `I wish I could call you right now and just turn the camera around. No explanation. Just — look at this. You'd get it.`,
+    memory: `Amer Palace, Jaipur. We walked in expecting grandeur and it was just latrine after latrine after latrine. Each one more elaborate than the last. We went from "oh wow" to "another one??" to full exhausted disbelief. It is now completely impossible for me to visit a historical monument without immediately looking for the latrines. This is your fault.`,
+    mission: `Make spaghetti. Whenever you feel like it — today, tomorrow, whenever. Your way. Send me a picture. I will see it when I'm back and I will be jealous, and I will not say I'm jealous, and you will know anyway.`
   },
   {
     day: 3,
@@ -264,20 +215,13 @@ var days = [
     dateObj: new Date("2026-06-29"),
     location: "Kalpa → Nako → Tabo",
     signal: false,
-    teaser: "No signal at all now. Full gayab, tumse imaginary baatein kar raha hoon at this point :')",
-    note: `<p>Today is apparently where Spiti starts looking fully different. 
-      Green hills khatam, cold desert start. AI photos me toh crazy lag raha hain, asli me kaisa lagega dekhke aata hoon.</p>
-      <p>Nako lake is also today. Small peaceful lake apparently. And idk why but still lakes immediately remind me of Fatehsagar now(also Pinchola). 
-        That night especially. 
-        Just us sitting and talking serious shit, childhood stories, everything together. Maza aaya tha yaar baby</p>
-        <p>And I think that's my favourite thing about us honestly. We can literally sit somewhere quietly and still have the best time.
-          And I'm saying it from a 100 saal purana monastery btw?? because apparently this is the only place I want to admit it.</p>
-    Tabo monastery is over a thousand years old. A thousand.</p>`,
+    teaser: "Deep in it now. No signal at all. Talking to you in my head, which you'd probably find alarming.",
+    note: `<p>Today should be one of those days where the landscape just changes completely — green hills slowly turning into cold desert, the air getting thinner, everything getting more sparse and still. Nako lake is supposedly small but very peaceful. Tabo monastery is over a thousand years old. A thousand.</p>
+<p>At altitude everything slows down. You breathe deliberately. You think in longer sentences. And what keeps coming back — always — is that night at Fatehsagar Lake in Udaipur. Both of us just talking. About our childhoods, about everything. The water completely still. You said things you don't say often. I think about that conversation more than I've told you.</p>
+<p>You make stillness feel like it has weight. Like it means something. I don't know how you do that. It's one of my favourite things about you and I'm saying it from a thousand-year-old monastery because apparently this is the only place I'll admit it.</p>`,
     wish: `I wish I could put your hand in mine and walk around this monastery and not say anything and have that be enough. It would be enough.`,
-    memory: `Ambrai yaad aa gaya randomly. One drink each and somehow 3 ghante nikal gaye bas baat karte karte. 
-    At some point I looked up ion the conversation and just thought- I could do this indefinitely. I still think that.`,
-    mission: `Your mission today: send me one picture from any place we travelled together and tell me why you picked that specific one. mast kaam par bhi laga raha tujhe, elder sibling things`,
-    photo: "https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=1400&q=80",
+    memory: `Three hours at Ambrai. One drink each. Both of us just talking — those conversations where you forget there's anyone else in the room, where the whole restaurant could leave and you wouldn't notice. At some point I looked up and just thought: I could do this indefinitely. I still think that.`,
+    mission: `Look at the sky tonight. Find a star — if you can, because it might be cloudy (haha, the romance of it). If you find one, that one's ours. If it's cloudy, just look at the clouds and know I'm somewhere under the same ones.`
   },
   {
     day: 4,
@@ -285,20 +229,13 @@ var days = [
     dateObj: new Date("2026-06-30"),
     location: "Tabo → Dhankar → Kaza",
     signal: false,
-    teaser: "Kaza todayyy. Cafes, mountains, maggi and probably me missing you in all 4 places simultaneously, probably kya definitely bhai (I am not your yaarrr..)",
-    note: `<p>Dhankar monastery today. This thing is literally hanging on a cliff btw. Its built into a cliff face about 500 metres above the valley. 
-      It's been there for 1,200 years and looks like it's making a choice to stay. I'll probably stand there and feel very small.</p>
-<p>And then Kaza. chhotu cafes in the middle of mountains, random bakeries, maggi, coffee, full your-type place honestly.
-   The way you get excited about cafes, mujhe bhi enthu bana diya. 
-  aosa caramel popcorn coffee yaad aa gaya. my cutu popcorn </p>
-<p>You randomly massage my back when you notice I'm tired before I've noticed it myself. I was probably very tired today. 
-  I noticed the absence of that. Love is mostly in the small things. I keep thinking about that out here.</p>`,
-    wish: `I wish you were here sitting in some tiny Kaza cafe with me. Tum coffee order karti dono ke liye ek safe and ek new try ofc, cutieee. And and and I am sure tu pura time cab mai baithke crochet karti aur mai count disturb karta heheh`,
-    memory: `That Udaipur place with the folk songs and mehfill, I forgor the name but you’ll definitely remember it - tipsy songs and youuu besttt combo.
-    <br><br>And that mirror selfie we took in the elevator is still one of the cutest pictures ever. 
-    Also I absolutely cannot forget stealing that kiss in the elevator after checking around for cameras first ofc`,
-    mission: `10 min crochet karo today sweetie. Bas 10. And send me progress pic. I already know mera wajah se count bhool jaogi hehe`,
-    photo: "https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=1400&q=80",
+    teaser: "Dhankar monastery is literally hanging off a cliff. I have questions about the architect.",
+    note: `<p>Dhankar Monastery is built into a cliff face about 500 metres above the valley. It's been there for 1,200 years and looks like it's making a choice to stay. I'll probably stand there and feel very small and also very glad you made me a muffler.</p>
+<p>Kaza is the main town — there are cafes and a small market and apparently very good maggi. The kind of place where the world just sort of ends and someone set up a bakery there anyway, which feels correct.</p>
+<p>You randomly massage my back when you notice I'm tired before I've noticed it myself. I was probably very tired today. I noticed the absence of that. Love is mostly in the small things. I keep thinking about that out here.</p>`,
+    wish: `I wish I could come back to the room and find you sitting cross-legged on the bed, completely absorbed in your crochet, counting stitches under your breath — and then look up at me and lose count. Honestly I would 100% be worth it.`,
+    memory: `That place in Udaipur — folk songs, mehfil, I can never remember the name, you'll know which one — ask me when I'm back and I'll try to describe it and fail, and then you'll remember it immediately. We took that photo in the lift. I stole a kiss. You were technically annoyed. Technically. One of my all-time favourites.`,
+    mission: `10 minutes of crochet. Just 10. And then if you feel like going further, go further. Make something while I'm gone. I want to ask you about it when I'm back.`
   },
   {
     day: 5,
@@ -306,17 +243,13 @@ var days = [
     dateObj: new Date("2026-07-01"),
     location: "Kaza — Local Day",
     signal: false,
-    teaser: "Main character day today apparently pura din idhar udhar ghoomna hain and obviously har jagah tumhari yaad aani hain.",
-    note: `<p>Key Monastery is at 4,000 metres overlooking the whole Spiti valley — 
-      white and stacked, looks like someone built it there on purpose which I think is the idea. Kibber, Hikkim, Langza — 
-      Key Monastery is at 4,000 metres overlooking the whole Spiti valley — white and stacked, looks unreal honestly.</p> <br></br>
-      <p><Main character se yaad aaya bacchu if I am a main character, its you I want to be main character baby. 
-        I want to spend every day of my life with you, and I mean it, even tho I am writing this now, before the trip, 
-        this is the same thing I am gonna thing on the each day</pr>`,
-    wish: `I wish you were here bubu. You would've already found some crockery here and crafts pata nahi kya kya.. ekdumn dadi habits aur ghar le aati hehe`,
-    memory: `Pandit Kulfi yaad aa gaya 😭 the way your whole face changed after first bite. “Mumbai me aisi kulfi kyu nahi milti??” full offended mode. Baby genuinely looked betrayed by Mumbai that day hhaha.`,
-    mission: `Pick any place we've gone together and send me the dumbest joke we laughed at there`,
-    photo: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1400&q=80",
+    teaser: "The highlight day, apparently. I'm in four places and thinking about one person.",
+    note: `<p>Key Monastery is at 4,000 metres overlooking the whole Spiti valley — white and stacked, looks like someone built it there on purpose which I think is the idea. Kibber, Hikkim, Langza — I'm supposed to send a postcard from Hikkim which is the highest post office in the world. I will probably write something embarrassing on it. You'll receive it in three weeks when I'm already back and it'll be anticlimactic and perfect.</p>
+<p>I keep thinking about street smart. Our thing. That energy we have when we figure something out together — a booking that almost didn't work, a wrong train that somehow became the right one. Nobody can tell us anything. We just move. I miss my co-conspirator.</p>
+<p>I'm proud of you, Itika. In a very specific, I-know-what-it-took way. I don't say it enough in person. So I'm saying it here, from 4,000 metres, where you can't interrupt me or change the subject.</p>`,
+    wish: `I wish you were here so you could go look for crafts and crockery in that small Kaza market. You'd find something specific and wonderful and completely impractical. I know this about you.`,
+    memory: `Pandit Kulfi in Jaipur. The look on your face. The immediate "why is Mumbai kulfi like that when THIS exists." I have not forgotten this. We are going back for that kulfi. This is not up for discussion.`,
+    mission: `Look up Spiti Valley. Find one photo that makes you stop scrolling. Save it. Show me when I'm back and tell me what it was about it. I want to know if we'd stop at the same one.`
   },
   {
     day: 6,
@@ -324,22 +257,13 @@ var days = [
     dateObj: new Date("2026-07-02"),
     location: "Kaza → Chandratal Lake",
     signal: false,
-    teaser: "handratal todayyy. Moon lake baby. tumhari bangkok vali photo yaad aa gayi",
-    note: `<p>Chandratal A glacial lake at 4,300 metres shaped like a crescent. 
-      The water is supposed to shift between blue and green depending on the light — neither colour makes complete sense at that altitude. 
-      We're camping here tonight. Actual tents, actual stars, zero light pollution.</p>
-<p>The Milky Way is supossed visible from here on a clear night (mera naseeb pata hain tumko). 
-  Tum yahah toh, you'd tilt your head back and go completely quiet and stay like that for a long time and 
-  I'd watch you and not say anything</p>
-  <p>This is so our type of place. Cold weather. Hoodies. Coffee. Quiet vibes. Random deep talks start ho jaate yaha with you.
-    Water baby ho aur lake dekh ke toh aur pagla jaati hehe</p>`,
-    wish: `I wish you were here with me at these camps. Dono tent ke bahar baithke sky dekhte, tu random constellation bana deti jo actually exist bhi nahi karta and confidently bolti "baby trust me this is real"`,
-    memory: `Bahubali Hills yaad aa gaya 😭 We were running on like 3 hours sleep, pura bheed tha udhar and somehow still peace mil gaya tha. <br><br>
-And ALSO. "Do logo ke liye nahi chal sakta baby mai." 😭😭 <br><br>
-I still laugh thinking about that line. Guess where I said it chal.`,
-    mission: `Make yourself a coffee. 
-    A good one, the way you actually like it. Sit somewhere comfortable. Send me a picture of the mug. That's it. That's the mission.`,
-    photo: "https://images.unsplash.com/photo-1502082553048-f009c37129b9?auto=format&fit=crop&w=1400&q=80",
+    teaser: "The Moon Lake. The one I've been most excited about. You'll understand when you read this.",
+    note: `<p>Chandratal. Chandra — moon. A glacial lake at 4,300 metres shaped like a crescent. The water is supposed to shift between blue and green depending on the light — neither colour makes complete sense at that altitude. We're camping here tonight. Actual tents, actual stars, zero light pollution.</p>
+<p>The Milky Way is apparently visible from here on a clear night. Just — visible. With your eyes. I know you. I know exactly what you'd do. You'd tilt your head back and go completely quiet and stay like that for a long time and I'd watch you and not say anything because that's the right call.</p>
+<p>I want to take you somewhere with a sky like this someday. We've talked about it — one day, when we actually plan it properly. This is me putting it on record: I'm already thinking about it.</p>`,
+    wish: `I wish you were here with me at these camps, looking at this sky, looking at each other. I would not say anything. I would just be very glad you were there.`,
+    memory: `Bahubali Hills, Udaipur. Sunrise. We had maybe 3 hours of sleep, up at 5am, reached by 7, both barely conscious. Maggi at the top. The city below in that blue-gold early light. You were half asleep and still the best thing in the view. I thought that and didn't say it and I'm saying it now.`,
+    mission: `Make yourself a coffee. A good one, the way you actually like it. Sit somewhere comfortable. Send me a picture of the mug. That's it. That's the mission.`
   },
   {
     day: 7,
@@ -347,14 +271,13 @@ I still laugh thinking about that line. Guess where I said it chal.`,
     dateObj: new Date("2026-07-03"),
     location: "Chandratal → Manali",
     signal: true,
-    teaser: "SIGNAL IS BACK BABYYYY. Tumhare phone pe ab tak mere 27 texts aa chuke honge hehehe",
+    teaser: "Signal is back. Which means you're probably already reading my panicked texts. I'm fine. It was beautiful.",
     note: `<p>Manali means signal. Which means I've probably already called you or texted you something long and incoherent at the first bar of connectivity. I regret nothing.</p>
 <p>The drive out of Spiti is through Rohtang Pass — rough roads turning suddenly smooth, mountains giving way to green valleys and waterfalls, clouds that were above you are now beside you. And then Manali, which is warm and has trees and feels like a completely different planet from where I've been.</p>
-<p>Eight days. I wrote to you every single morning and it made every day better. You were in all of it, ita — the rivers and the monasteries and the freezing nights and the ridiculous sky at Chandratal. Baby, you were somehow part of all of it.</p>`,
-    wish: `I lowkey wish tu teleport ho paati idhar. I wanna hug you babyyyy..`,
-    memory: `Zostel Lonavala yaad aa gaya 😭 lakeside lunch, random dancing, swimming, pura no thoughts just vibes energy. I love us!!`,
-    mission: `Pick up when I call. Bas. Bohot important mission hain ye 😭`,
-    photo: "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=1400&q=80",
+<p>Eight days. I wrote to you every single morning and it made every day better. You were in all of it, Itika — the rivers and the monasteries and the freezing nights and the ridiculous sky at Chandratal. Love of my life, you were in all of it. I mean that in the least cringe way possible. You know what I mean.</p>`,
+    wish: `I wish I could have teleported to you for about 20 minutes somewhere around Day 4 just to give you a hug and come back. That's all. The hug specifically.`,
+    memory: `Zostel Lonavala. That lakeside lunch. The completely spontaneous dancing and singing. Swimming. Everything easy and stupid and fun. That's us at our best — no plan, just going. We have so many more of those ahead. I'm keeping count.`,
+    mission: `Pick up when I call. That's the whole mission. Pick up.`
   },
   {
     day: 8,
@@ -362,58 +285,18 @@ I still laugh thinking about that line. Guess where I said it chal.`,
     dateObj: new Date("2026-07-04"),
     location: "Manali → Chandigarh",
     signal: true,
-    teaser: "Last day babyyy. Mountains peeche reh rahe hain and ab bas ghar aana hain tumhare paas 😭",
-    note: `<p>Manali to Chandigarh is almost 300km. Long drive. 
-      I'm watching the mountains shrink in the rearview and feeling two things at the same time — 
-      that ache of leaving something extraordinary, and a much louder pull toward home. Toward you.</p>
-<p>I'm going to talk so much when I'm back. 
-  Every monastery and river and bad road and freezing morning and impossible Chandratal sky. 
-  I'm going to make you look at every photo. And when I’m back bubu, 
-  I already know what’s going to happen.<br>You’re going to sit with that curious face 
-  and make me tell you every tiny detail from the trip properly 😭</p>
+    teaser: "The long drive back. Counting down. The mountains are getting smaller in the mirror.",
+    note: `<p>Manali to Chandigarh is almost 300km. Long drive. I'm watching the mountains shrink in the rearview and feeling two things at the same time — that ache of leaving something extraordinary, and a much louder pull toward home. Toward you.</p>
+<p>I'm going to talk so much when I'm back. Every monastery and river and bad road and freezing morning and impossible Chandratal sky. I'm going to make you look at every photo. You're going to say "okay I get it, mountains, wow, beautiful" and I'm going to keep going. You'll love it. You'll pretend you don't.</p>
 <p>Train boards tonight. Home by midnight on the 5th. Count down with me.</p>`,
-    wish: `Wish midnight jaldi aa jaaye bas, jaldi ghar aau tere paas. Missing you properly now baccha`,
+    wish: `I wish midnight were sooner. I wish you knew — across all of this — how much.`,
     memory: `All of it. Everything we've ever done together. And now I get to tell you about Spiti in person, which is genuinely a gift for me because you're going to have to sit there and listen. I'm very excited about this.`,
-    mission: `You do you hehe`,
-    photo: "https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=1400&q=80",
-  }
-];
-
-var songLyrics = [
-  {
-    title: "tu aisa kaise hai ♪",
-    line1: "तेरे साथ सब कुछ इतना आसान कैसे है?",
-    line2: "मुझे अपना घर मिल जाता है तुझ में..."
-  },
-
-  {
-    title: "arz kiya hai ♪",
-    line1: "तेरे बिना मैं कुछ भी नहीं, कुछ भी नहीं यारा...",
-    line2: "तुझको लिखी है ये कहानी, कहानी मेरी..."
-  },
-
-  {
-    title: "khat ♪",
-    line1: "जो तेरे संग बीती वो शामें मेरी...",
-    line2: "लिख रहा हूँ आज फिर तुझे..."
+    mission: `Send me a fit check. Right now. I want to know what you're wearing when I come home. This is important information.`
   }
 ];
 
 function render() {
   var today = getToday();
-
-  // Song strip logic
-  var songIndex = Math.abs(daysDiff(today, new Date("2026-06-27"))) % songLyrics.length;
-  var currentSong = songLyrics[songIndex];
-
-  var titleEl = document.getElementById("song-title");
-  var line1El = document.getElementById("song-line-1");
-  var line2El = document.getElementById("song-line-2");
-
-  if (titleEl) titleEl.textContent = currentSong.title;
-  if (line1El) line1El.textContent = currentSong.line1;
-  if (line2El) line2El.textContent = currentSong.line2;
-
   var container = document.getElementById("days-container");
   container.innerHTML = "";
 
@@ -445,9 +328,7 @@ function render() {
     if (unlocked) {
       html += '<p class="day-teaser">' + d.teaser + "</p>";
       html += '<div class="day-body">';
-      html += '<div class="photo-slot">';
-      html += '<img src="' + d.photo + '" alt="' + d.location + '">';
-      html += '</div>';
+      html += '<div class="photo-slot"><div class="photo-slot-placeholder"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#A8A29E" stroke-width="1.5" stroke-linecap="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg><span class="photo-slot-label">📸 photo from ' + d.location + " — coming soon</span></div></div>";
       html += '<div class="note-block">' + d.note + "</div>";
       html += '<div class="wish-block"><strong>✦ if you were here</strong>' + d.wish + "</div>";
       html += '<div class="memory-block"><div class="memory-label">↩ a memory from us</div><p>' + d.memory + "</p></div>";
