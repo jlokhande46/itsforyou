@@ -4,111 +4,151 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>okay fine, it's for you 🏔️</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🏔️</text></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;1,400;1,500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-  :root {
-    --cream: #FAF7F2;
-    --warm-white: #FFFDF9;
-    --ink: #1C1917;
-    --ink-muted: #57534E;
-    --ink-faint: #A8A29E;
-    --accent: #C2773A;
-    --accent-light: #F5E6D3;
-    --snow: #E8EDF2;
-    --pine: #4A6741;
-    --pine-light: #E6EDE5;
-    --card-border: rgba(28,25,23,0.08);
-    --radius: 12px;
-  }
-  html { scroll-behavior: smooth; }
-  body { font-family: 'Inter', sans-serif; background: var(--cream); color: var(--ink); min-height: 100vh; overflow-x: hidden; }
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --cream: #FAF7F2;
+  --warm-white: #FFFDF9;
+  --ink: #1C1917;
+  --ink-muted: #57534E;
+  --ink-faint: #A8A29E;
+  --accent: #C2773A;
+  --accent-light: #F5E6D3;
+  --snow: #E8EDF2;
+  --pine: #4A6741;
+  --pine-light: #E6EDE5;
+  --card-border: rgba(28,25,23,0.08);
+  --radius: 12px;
+}
 
-  .hero {
-    min-height: 100svh; display: flex; flex-direction: column;
-    align-items: center; justify-content: center; text-align: center;
-    padding: 2rem 1.5rem 6rem; position: relative;
-    background: var(--warm-white); border-bottom: 1px solid var(--card-border);
-    overflow: hidden;
-  }
-  .hero-mountains { position: absolute; bottom: 0; left: 0; right: 0; height: 200px; opacity: 0.06; pointer-events: none; }
-  .hero-eyebrow { font-size: 11px; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; color: var(--accent); margin-bottom: 1.5rem; }
-  .hero-title { font-family: 'Lora', serif; font-size: clamp(2.2rem, 7vw, 4rem); font-weight: 400; line-height: 1.15; color: var(--ink); margin-bottom: 1.25rem; max-width: 680px; }
-  .hero-title em { font-style: italic; color: var(--accent); }
-  .hero-sub { font-size: 16px; color: var(--ink-muted); max-width: 460px; line-height: 1.75; margin-bottom: 2rem; }
-  .hero-date-badge { display: inline-flex; align-items: center; gap: 8px; background: var(--accent-light); color: var(--accent); font-size: 13px; font-weight: 500; padding: 8px 18px; border-radius: 100px; margin-bottom: 3rem; }
-  .scroll-hint { font-size: 13px; color: var(--ink-faint); display: flex; flex-direction: column; align-items: center; gap: 8px; animation: bounce 2s ease-in-out infinite; }
-  @keyframes bounce { 0%,100%{transform:translateY(0)} 50%{transform:translateY(6px)} }
+html { scroll-behavior: smooth; }
+body { font-family: 'Inter', sans-serif; background: var(--cream); color: var(--ink); min-height: 100vh; overflow-x: hidden; }
 
-  .song-strip { background: var(--ink); color: rgba(255,255,255,0.85); padding: 1.25rem 1.5rem; text-align: center; font-family: 'Lora', serif; font-style: italic; font-size: 14px; line-height: 1.9; }
-  .song-title { color: var(--accent); font-style: normal; font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; display: block; margin-bottom: 6px; }
+/* ── HERO ── */
+.hero {
+  min-height: 100svh; display: flex; flex-direction: column;
+  align-items: center; justify-content: center; text-align: center;
+  padding: 2rem 1.5rem 6rem; position: relative;
+  background: var(--warm-white); border-bottom: 1px solid var(--card-border);
+  overflow: hidden;
+}
+.hero-mountains { position: absolute; bottom: 0; left: 0; right: 0; height: 200px; opacity: 0.06; pointer-events: none; }
+.hero-eyebrow { font-size: 11px; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; color: var(--accent); margin-bottom: 1.5rem; opacity: 0; animation: fadeUp 0.7s ease 0.1s forwards; }
+.hero-title { font-family: 'Lora', serif; font-size: clamp(2.2rem, 7vw, 4rem); font-weight: 400; line-height: 1.15; color: var(--ink); margin-bottom: 1.25rem; max-width: 680px; opacity: 0; animation: fadeUp 0.7s ease 0.25s forwards; }
+.hero-title em { font-style: italic; color: var(--accent); }
+.hero-sub { font-size: 16px; color: var(--ink-muted); max-width: 460px; line-height: 1.75; margin-bottom: 2rem; opacity: 0; animation: fadeUp 0.7s ease 0.4s forwards; }
+.hero-date-badge { display: inline-flex; align-items: center; gap: 8px; background: var(--accent-light); color: var(--accent); font-size: 13px; font-weight: 500; padding: 8px 18px; border-radius: 100px; margin-bottom: 3rem; opacity: 0; animation: fadeUp 0.7s ease 0.55s forwards; }
+.scroll-hint { font-size: 13px; color: var(--ink-faint); display: flex; flex-direction: column; align-items: center; gap: 8px; animation: bounce 2s ease-in-out infinite; opacity: 0; animation: fadeUp 0.7s ease 0.7s forwards, bounce 2s ease-in-out 1s infinite; }
 
-  .timeline-section { max-width: 720px; margin: 0 auto; padding: 4rem 1.5rem 2rem; }
-  .section-label { font-size: 11px; font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase; color: var(--ink-faint); margin-bottom: 2.5rem; text-align: center; }
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(18px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes bounce { 0%,100%{transform:translateY(0)} 50%{transform:translateY(6px)} }
 
-  .day-card { background: var(--warm-white); border: 1px solid var(--card-border); border-radius: var(--radius); margin-bottom: 1.5rem; overflow: hidden; transition: box-shadow 0.2s; }
-  .day-card.unlocked:hover { box-shadow: 0 4px 24px rgba(0,0,0,0.05); }
-  .day-card.locked { opacity: 0.38; pointer-events: none; }
+/* ── SONG STRIP ── */
+.song-strip {
+  background: var(--ink);
+  color: rgba(255,255,255,0.88);
+  padding: 1.4rem 1.5rem;
+  text-align: center;
+  font-family: 'Lora', serif;
+  overflow: hidden;
+}
+.song-title { color: var(--accent); font-style: normal; font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; display: block; margin-bottom: 0.9rem; opacity: 0.85; }
+.song-lines { min-height: 52px; }
+.song-lines p { font-size: 15px; line-height: 1.9; font-style: italic; transition: opacity 0.4s ease; }
 
-  .day-header { display: flex; align-items: flex-start; justify-content: space-between; padding: 1.25rem 1.5rem 0; cursor: pointer; gap: 12px; }
-  .day-meta { display: flex; flex-direction: column; gap: 4px; flex: 1; }
-  .day-number { font-size: 11px; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-faint); }
-  .day-location { font-family: 'Lora', serif; font-size: 1.2rem; font-weight: 500; color: var(--ink); line-height: 1.3; }
-  .day-right { display: flex; flex-direction: column; align-items: flex-end; gap: 6px; flex-shrink: 0; }
-  .day-date-pill { font-size: 12px; font-weight: 500; color: var(--accent); background: var(--accent-light); padding: 4px 12px; border-radius: 100px; white-space: nowrap; }
-  .today-badge { font-size: 11px; color: var(--accent); font-weight: 600; letter-spacing: 0.06em; }
-  .signal-pill { font-size: 10px; font-weight: 500; padding: 2px 8px; border-radius: 100px; white-space: nowrap; }
-  .signal-yes { background: #E6EDE5; color: #4A6741; }
-  .signal-no { background: #F5E6D3; color: #C2773A; }
-  .chevron { color: var(--ink-faint); transition: transform 0.25s; flex-shrink: 0; margin-top: 6px; }
-  .day-card.open .chevron { transform: rotate(180deg); }
+/* ── TIMELINE ── */
+.timeline-section { max-width: 720px; margin: 0 auto; padding: 4rem 1.5rem 2rem; }
+.section-label { font-size: 11px; font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase; color: var(--ink-faint); margin-bottom: 2.5rem; text-align: center; }
 
-  .day-teaser { font-size: 14px; color: var(--ink-muted); font-style: italic; padding: 0.6rem 1.5rem 1.25rem; font-family: 'Lora', serif; border-bottom: 1px solid transparent; transition: border-color 0.2s; }
-  .day-card.open .day-teaser { border-bottom-color: var(--card-border); }
+/* ── CARDS ── */
+.day-card {
+  background: var(--warm-white);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius);
+  margin-bottom: 1.5rem;
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(24px);
+  transition: box-shadow 0.2s, opacity 0.5s ease, transform 0.5s ease;
+}
+.day-card.visible { opacity: 1; transform: translateY(0); }
+.day-card.unlocked:hover { box-shadow: 0 4px 24px rgba(0,0,0,0.05); }
+.day-card.locked { opacity: 0; pointer-events: none; }
+.day-card.locked.visible { opacity: 0.38; }
 
-  .day-body { display: none; padding: 1.5rem; animation: fadeIn 0.3s ease; }
-  .day-card.open .day-body { display: block; }
-  @keyframes fadeIn { from{opacity:0;transform:translateY(6px)} to{opacity:1;transform:none} }
+.day-header { display: flex; align-items: flex-start; justify-content: space-between; padding: 1.25rem 1.5rem 0; cursor: pointer; gap: 12px; }
+.day-meta { display: flex; flex-direction: column; gap: 4px; flex: 1; }
+.day-number { font-size: 11px; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-faint); }
+.day-location { font-family: 'Lora', serif; font-size: 1.2rem; font-weight: 500; color: var(--ink); line-height: 1.3; }
+.day-right { display: flex; flex-direction: column; align-items: flex-end; gap: 6px; flex-shrink: 0; }
+.day-date-pill { font-size: 12px; font-weight: 500; color: var(--accent); background: var(--accent-light); padding: 4px 12px; border-radius: 100px; white-space: nowrap; }
+.today-badge { font-size: 11px; color: var(--accent); font-weight: 600; letter-spacing: 0.06em; }
+.signal-pill { font-size: 10px; font-weight: 500; padding: 2px 8px; border-radius: 100px; white-space: nowrap; }
+.signal-yes { background: #E6EDE5; color: #4A6741; }
+.signal-no { background: #F5E6D3; color: #C2773A; }
+.chevron { color: var(--ink-faint); transition: transform 0.3s cubic-bezier(0.4,0,0.2,1); flex-shrink: 0; margin-top: 6px; }
+.day-card.open .chevron { transform: rotate(180deg); }
 
-  .photo-slot { width: 100%; aspect-ratio: 16/9; background: var(--snow); border-radius: 8px; margin-bottom: 1.5rem; overflow: hidden; position: relative; }
-  .photo-slot img { width: 100%; height: 100%; object-fit: cover; display: block; }
-  .photo-slot-placeholder { width: 100%; height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; }
-  .photo-slot-label { font-size: 12px; color: var(--ink-faint); font-style: italic; }
-  .photo-caption { font-size: 11px; color: var(--ink-faint); text-align: center; margin-top: -1rem; margin-bottom: 1.5rem; font-style: italic; letter-spacing: 0.03em; }
+.day-teaser { font-size: 14px; color: var(--ink-muted); font-style: italic; padding: 0.6rem 1.5rem 1.25rem; font-family: 'Lora', serif; border-bottom: 1px solid transparent; transition: border-color 0.2s; }
+.day-card.open .day-teaser { border-bottom-color: var(--card-border); }
 
-  .note-block { font-family: 'Lora', serif; font-size: 15.5px; line-height: 1.85; color: var(--ink); margin-bottom: 1.5rem; }
-  .note-block p { margin-bottom: 0.9rem; }
-  .note-block p:last-child { margin-bottom: 0; }
+/* ── CARD BODY — smooth accordion ── */
+.day-body-wrapper {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.4s cubic-bezier(0.4,0,0.2,1);
+}
+.day-card.open .day-body-wrapper {
+  grid-template-rows: 1fr;
+}
+.day-body-inner {
+  overflow: hidden;
+}
+.day-body { padding: 1.5rem; }
 
-  .wish-block { background: var(--accent-light); border-left: 3px solid var(--accent); border-radius: 0 8px 8px 0; padding: 1rem 1.25rem; margin-bottom: 1.5rem; font-family: 'Lora', serif; font-style: italic; font-size: 14.5px; color: var(--ink); line-height: 1.7; }
-  .wish-block strong { display: block; font-family: 'Inter', sans-serif; font-style: normal; font-size: 11px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); margin-bottom: 6px; }
+.photo-slot { width: 100%; aspect-ratio: 16/9; background: var(--snow); border-radius: 8px; margin-bottom: 1.5rem; overflow: hidden; position: relative; }
+.photo-slot img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.6s ease; }
+.day-card.open .photo-slot img { transform: scale(1.02); }
 
-  .memory-block { background: var(--pine-light); border: 1px solid rgba(74,103,65,0.15); border-radius: 8px; padding: 1rem 1.25rem; margin-bottom: 1.5rem; }
-  .memory-label { font-size: 11px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--pine); margin-bottom: 6px; }
-  .memory-block p { font-family: 'Lora', serif; font-style: italic; font-size: 14px; color: var(--ink); line-height: 1.75; }
+.note-block { font-family: 'Lora', serif; font-size: 15.5px; line-height: 1.85; color: var(--ink); margin-bottom: 1.5rem; }
+.note-block p { margin-bottom: 0.9rem; }
+.note-block p:last-child { margin-bottom: 0; }
+.wish-block { background: var(--accent-light); border-left: 3px solid var(--accent); border-radius: 0 8px 8px 0; padding: 1rem 1.25rem; margin-bottom: 1.5rem; font-family: 'Lora', serif; font-style: italic; font-size: 14.5px; color: var(--ink); line-height: 1.7; }
+.wish-block strong { display: block; font-family: 'Inter', sans-serif; font-style: normal; font-size: 11px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); margin-bottom: 6px; }
+.memory-block { background: var(--pine-light); border: 1px solid rgba(74,103,65,0.15); border-radius: 8px; padding: 1rem 1.25rem; margin-bottom: 1.5rem; }
+.memory-label { font-size: 11px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--pine); margin-bottom: 6px; }
+.memory-block p { font-family: 'Lora', serif; font-style: italic; font-size: 14px; color: var(--ink); line-height: 1.75; }
+.mission-block { border: 1px dashed rgba(194,119,58,0.4); border-radius: 8px; padding: 1rem 1.25rem; margin-bottom: 0.5rem; }
+.mission-label { font-size: 11px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); margin-bottom: 6px; }
+.mission-block p { font-size: 14px; color: var(--ink-muted); line-height: 1.7; }
+.locked-label { display: flex; align-items: center; gap: 8px; font-size: 12px; color: var(--ink-faint); padding: 0.75rem 1.5rem 1.25rem; font-style: italic; }
 
-  .mission-block { border: 1px dashed rgba(194,119,58,0.4); border-radius: 8px; padding: 1rem 1.25rem; margin-bottom: 0.5rem; }
-  .mission-label { font-size: 11px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); margin-bottom: 6px; }
-  .mission-block p { font-size: 14px; color: var(--ink-muted); line-height: 1.7; }
+/* ── FOOTER ── */
+.footer { text-align: center; padding: 3rem 1.5rem 6rem; border-top: 1px solid var(--card-border); background: var(--warm-white); }
+.footer-title { font-family: 'Lora', serif; font-size: 1.5rem; font-style: italic; color: var(--ink); margin-bottom: 0.75rem; }
+.footer-sub { font-size: 14px; color: var(--ink-muted); line-height: 1.75; max-width: 380px; margin: 0 auto 2rem; }
+.sunshine-verse { font-family: 'Lora', serif; font-style: italic; font-size: 15px; color: var(--ink-muted); line-height: 2.2; max-width: 400px; margin: 0 auto; border-top: 1px solid var(--card-border); padding-top: 2rem; }
+.sunshine-credit { font-family: 'Inter', sans-serif; font-style: normal; font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink-faint); margin-top: 12px; display: block; }
 
-  .locked-label { display: flex; align-items: center; gap: 8px; font-size: 12px; color: var(--ink-faint); padding: 0.75rem 1.5rem 1.25rem; font-style: italic; }
+/* ── PREVIEW BAR ── */
+#preview-bar { position: fixed; bottom: 0; left: 0; right: 0; background: #1C1917; color: rgba(255,255,255,0.85); padding: 10px 16px; display: flex; align-items: center; gap: 10px; font-family: monospace; font-size: 13px; z-index: 9999; border-top: 2px solid #C2773A; }
+#preview-bar select { background: #2C2C2A; color: white; border: 1px solid rgba(255,255,255,0.2); padding: 5px 10px; border-radius: 6px; font-size: 13px; font-family: monospace; flex: 1; }
+#preview-bar button { background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.15); color: rgba(255,255,255,0.5); padding: 5px 12px; border-radius: 6px; cursor: pointer; font-size: 12px; white-space: nowrap; }
 
-  .footer { text-align: center; padding: 3rem 1.5rem 6rem; border-top: 1px solid var(--card-border); background: var(--warm-white); }
-  .footer-title { font-family: 'Lora', serif; font-size: 1.5rem; font-style: italic; color: var(--ink); margin-bottom: 0.75rem; }
-  .footer-sub { font-size: 14px; color: var(--ink-muted); line-height: 1.75; max-width: 380px; margin: 0 auto 2rem; }
-  .sunshine-verse { font-family: 'Lora', serif; font-style: italic; font-size: 15px; color: var(--ink-muted); line-height: 2.2; max-width: 400px; margin: 0 auto; border-top: 1px solid var(--card-border); padding-top: 2rem; }
-  .sunshine-credit { font-family: 'Inter', sans-serif; font-style: normal; font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink-faint); margin-top: 12px; display: block; }
-
-  #preview-bar { position: fixed; bottom: 0; left: 0; right: 0; background: #1C1917; color: rgba(255,255,255,0.85); padding: 10px 16px; display: flex; align-items: center; gap: 10px; font-family: monospace; font-size: 13px; z-index: 9999; border-top: 2px solid #C2773A; }
-  #preview-bar select { background: #2C2C2A; color: white; border: 1px solid rgba(255,255,255,0.2); padding: 5px 10px; border-radius: 6px; font-size: 13px; font-family: monospace; flex: 1; }
-  #preview-bar button { background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.15); color: rgba(255,255,255,0.5); padding: 5px 12px; border-radius: 6px; cursor: pointer; font-size: 12px; white-space: nowrap; }
-
-  @media (max-width: 480px) {
-    .hero-title { font-size: 2rem; }
-    .day-header { flex-wrap: wrap; }
-  }
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+}
+@media (max-width: 480px) {
+  .hero-title { font-size: 2rem; }
+  .day-header { flex-wrap: wrap; }
+}
 </style>
 </head>
 <body>
@@ -133,9 +173,11 @@
 </section>
 
 <div class="song-strip">
-  <span class="song-title">arz kiya hai &nbsp;·&nbsp; khat &nbsp;·&nbsp; our songs, always ♪</span>
-  "तेरे बिना मैं कुछ भी नहीं, कुछ भी नहीं यारा..."<br>
-  "तुझको लिखी है ये कहानी, कहानी मेरी..."
+  <span class="song-title" id="song-title">our songs, always ♪</span>
+  <div class="song-lines">
+    <p id="song-line-1"></p>
+    <p id="song-line-2"></p>
+  </div>
 </div>
 
 <div class="timeline-section">
@@ -146,8 +188,8 @@
 <footer class="footer">
   <p class="footer-title">I'll be home before you know it.</p>
   <p class="footer-sub">
-    And I'll talk your ears off about every single thing.<br>
-    You're going to have to tell me to stop. You won't though.
+    And when I'm back bubu, I already know what's going to happen.<br>
+    You're going to sit with that curious face and make me tell you every tiny detail from the trip properly 😭
   </p>
   <div class="sunshine-verse">
     You are my sunshine, my only sunshine<br>
@@ -169,17 +211,7 @@ function daysDiff(cardDate, today) {
   return Math.floor((a - b) / 86400000);
 }
 
-var PLACE_IMAGES = [
-  "https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?w=900&q=80",
-  "https://images.unsplash.com/photo-1609340001098-5c68ba4a8949?w=900&q=80",
-  "https://images.unsplash.com/photo-1592549585866-486f81563f1d?w=900&q=80",
-  "https://images.unsplash.com/photo-1628172648524-e10e4e7a0ca0?w=900&q=80",
-  "https://images.unsplash.com/photo-1631889993959-41b4e9c6e3c5?w=900&q=80",
-  "https://images.unsplash.com/photo-1626621386606-8fa5e4a60041?w=900&q=80",
-  "https://images.unsplash.com/photo-1605649488812-3ffb2b27b7ac?w=900&q=80",
-  "https://images.unsplash.com/photo-1580289143186-03f54224aad6?w=900&q=80"
-];
-
+// Location-matched Unsplash photos for each day
 var days = [
   {
     day: 1,
@@ -187,13 +219,15 @@ var days = [
     dateObj: new Date("2026-06-27"),
     location: "Sangla Valley",
     signal: true,
-    teaser: "First morning in the mountains. Might still have signal today — so if you got a random text at 6am, that was me.",
-    note: `<p>So. Sangla. I will probably have some signal today and by the time you're reading this I've already texted you something completely unhinged. Ignore it. Or don't. Up to you.</p>
-<p>But here's what I'm guessing the morning looks like from everything I've read: the Baspa river will probably be this turquoise-green that doesn't feel real — like someone decided water should be that colour and didn't consult anyone. Pine forests going up both sides. Snow on the peaks. The kind of silence that isn't quiet, it just sounds different.</p>
-<p>I'm going to stand there and think you need to see this. Specifically you. Not in a general "this is beautiful" way — in the very specific way where I know you'd go completely quiet for a full minute and I'd watch you instead of the view.</p>`,
-    wish: `I wish you were here so I could see your face when you first see this valley. That's it. That's the whole wish.`,
-    memory: `Remember that Udaipur evening — you said "right here!" on the scooty with full and complete confidence and we turned right and it was very much not a road, it was just Udaipur's entire gali system. I think about that every single time someone gives me directions. Which is often. And I always think of you.`,
-    mission: `Your mission: find that carnation I got you — if it's still alive, put it somewhere you'll see it today. If it's wilted (honestly fair), go buy one, take a picture, and send it to me. I'll see it when I'm back and I will be very smug about it.`
+    teaser: "First morning in the mountains. Might still have signal today — so if you got a random text at 7am, that was me. Ofc aadat hain na tumko subeh pareshaan karne ki",
+    note: `<p>So. Sangla. I will probably have some signal today and by the time you're reading this I've already texted you something completely unhinged, blabbered somthing hihihi </p>
+<p>But here's what I'm guessing the morning looks like from everything I've read: the Baspa river will probably be this turquoise green(AI hain mujhe ghanta nahi pata ye konsa colour hain) that doesn't feel real — like someone decided water should be that colour and didn't consult anyone (waah kya fek raha hain). Pine forests going up both sides. Snow on the peaks. The kind of silence that isn't quiet, it just sounds different. (full Kevindra Chopra vibes, aake batata hoon aise he tha kya tho)</p>
+<p>I'm going to stand there and think you need to see this. fr. Specifically you. Not in a general "this is beautiful" way — in the very specific way where I know you'd go completely quiet for a full minute and I'd watch you instead of the view. The same we we watched the Sunset together and I wanted you ;) </p>`,
+    wish: `Bubu, I wish you were here so I could see your face when you first see this valley. Bas itna hain.. thats the whole wish`,
+    memory: `Talking about first days, tumko yaad hain the time we landed in Udaipur, and they we started the non chalant bag uthane ka challange. maza aa gaya tha aate he masti chalu.<br><br>And then literally before even properly reaching Udaipur, hume kachori khaani hain. My baby looked sooo happy eating that kachori. funnn <br><br>Which reminds me, the kachori your roommate brought from Jodhpur, jo tumne mujhe apne haatho se khilayi thi... ofc it tasted better because you were feeding me and not because of any actual cooking skill involved, ofc ofc.`,
+    mission: `Your mission: chalo batao which is the joke you laughed the most at in Udaipur, (saying YOU is not allowed, please dimag par zor daalo huhh) <br><br>Also, send me a picture of carnation I got you koi bhi kitna bhi purana (heartbreak if you don't have one) Nahi hua toh buy one for you and send a pic. Keep watering mai aane tak zinda rakho usse hehe`,
+    // Sangla Valley / Baspa River — pine forest turquoise river
+    photo: "https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?w=900&q=80",
   },
   {
     day: 2,
@@ -201,13 +235,14 @@ var days = [
     dateObj: new Date("2026-06-28"),
     location: "Chitkul & Kalpa",
     signal: false,
-    teaser: "Signal dies after Kalpa. So this is where I officially disappear. Don't panic.",
-    note: `<p>Chitkul is the last inhabited village before the Tibet border. There's a signboard that literally says it. I'll probably stand there thinking — this is the edge of India — and then think about the muffler you made me, which I'm very much wearing because it's freezing, and that'll make it better.</p>
-<p>I'll also be missing Nutcracker's spaghetti, just so you know. And also that soy milk spaghetti you made — okay yes it got spoiled but the <em>intention</em> was so good. The intention was 10/10.</p>
-<p>Kalpa in the evening has Kinnaur Kailash right across the valley — this massive wall of snow and rock that just <em>appears</em> when the clouds shift. Apparently the mountains turn orange then pink then purple at sunset. I'll be standing there in your muffler watching a mountain turn colours and thinking about you. You did this. You made me sentimental about mountains.</p>`,
-    wish: `I wish I could call you right now and just turn the camera around. No explanation. Just — look at this. You'd get it.`,
-    memory: `Amer Palace, Jaipur. We walked in expecting grandeur and it was just latrine after latrine after latrine. Each one more elaborate than the last. We went from "oh wow" to "another one??" to full exhausted disbelief. It is now completely impossible for me to visit a historical monument without immediately looking for the latrines. This is your fault.`,
-    mission: `Make spaghetti. Whenever you feel like it — today, tomorrow, whenever. Your way. Send me a picture. I will see it when I'm back and I will be jealous, and I will not say I'm jealous, and you will know anyway.`
+    teaser: "Signal dies after Kalpa. So this is where I officially disappear. Don't panic sshhhhhh. Bich bich me aayega signal I hope tumko pareshaan karne",
+    note: `<p>Chitkul is the last inhabited village before the Tibet border. There's a signboard that literally says it. I'll probably stand there thinking, oh this is the edge of India and I will have the muffler you made me, which I'm very much wearing because it's freezing, and that'll make it better. It will give me the feelin of having you around me</p>
+<p>Kalpa in the evening has Kinnaur Kailash right across the valley, this massive wall of snow and rock that just <em>appears</em> when the clouds shift ( I hope shift ho jaaye varna toh Mandalpatti moment). Apparently the mountains turn orange then pink then purple at sunset (you know the gist right, after part of sunset). I would be lying if I said I won't be missing you in that very moment. I'll be standing there in the muffler you made me, watching a mountain turn colours and thinking about you. You did this. You made me sentimental about sunsets baby.</p>`,
+    wish: `I wish I could call you right now and just turn the camera around. No explanation. Just look at this. You'd get it.`,
+    memory: `Inhabited se yaad aaya, the soy milk spaghetti from chef Ita, because why not, bechari baby was soo irritated ye kya bana diya, picky eater is what we got from that dish lol. I'll also be missing your aglio olio spaghetti, just so you know. jald he aake khaunga tere haathon se..`,
+    mission: `Make spaghetti. Whenever you feel like it, today, tomorrow, whenever. Your way. Send me a picture. I will see it when I'm back and I will be jealous, and I will not say I'm jealous, and you will know anyway.`,
+    // Chitkul last village — snow peaks Kinnaur
+    photo: "https://images.unsplash.com/photo-1609340001098-5c68ba4a8949?w=900&q=80",
   },
   {
     day: 3,
@@ -215,13 +250,16 @@ var days = [
     dateObj: new Date("2026-06-29"),
     location: "Kalpa → Nako → Tabo",
     signal: false,
-    teaser: "Deep in it now. No signal at all. Talking to you in my head, which you'd probably find alarming.",
-    note: `<p>Today should be one of those days where the landscape just changes completely — green hills slowly turning into cold desert, the air getting thinner, everything getting more sparse and still. Nako lake is supposedly small but very peaceful. Tabo monastery is over a thousand years old. A thousand.</p>
-<p>At altitude everything slows down. You breathe deliberately. You think in longer sentences. And what keeps coming back — always — is that night at Fatehsagar Lake in Udaipur. Both of us just talking. About our childhoods, about everything. The water completely still. You said things you don't say often. I think about that conversation more than I've told you.</p>
-<p>You make stillness feel like it has weight. Like it means something. I don't know how you do that. It's one of my favourite things about you and I'm saying it from a thousand-year-old monastery because apparently this is the only place I'll admit it.</p>`,
+    teaser: "No signal at all now. Full gayab, tumse imaginary baatein kar raha hoon at this point :')",
+    note: `<p>Today is apparently where Spiti starts looking fully different. Green hills khatam, cold desert start. AI photos me toh crazy lag raha hain, asli me kaisa lagega dekhke aata hoon.</p>
+<p>Nako lake is also today. Small peaceful lake apparently. And idk why but still lakes immediately remind me of Fatehsagar now(also Pinchola). That night especially. Just us sitting and talking serious shit, childhood stories, everything together. Maza aaya tha yaar baby</p>
+<p>And I think that's my favourite thing about us honestly. We can literally sit somewhere quietly and still have the best time. And I'm saying it from a 100 saal purana monastery btw?? because apparently this is the only place I want to admit it.</p>
+<p>Tabo monastery is over a thousand years old. A thousand.</p>`,
     wish: `I wish I could put your hand in mine and walk around this monastery and not say anything and have that be enough. It would be enough.`,
-    memory: `Three hours at Ambrai. One drink each. Both of us just talking — those conversations where you forget there's anyone else in the room, where the whole restaurant could leave and you wouldn't notice. At some point I looked up and just thought: I could do this indefinitely. I still think that.`,
-    mission: `Look at the sky tonight. Find a star — if you can, because it might be cloudy (haha, the romance of it). If you find one, that one's ours. If it's cloudy, just look at the clouds and know I'm somewhere under the same ones.`
+    memory: `Ambrai yaad aa gaya randomly. One drink each and somehow 3 ghante nikal gaye bas baat karte karte. At some point I looked up ion the conversation and just thought- I could do this indefinitely. I still think that.`,
+    mission: `Your mission today: send me one picture from any place we travelled together and tell me why you picked that specific one. mast kaam par bhi laga raha tujhe, elder sibling things`,
+    // Nako Lake cold desert Spiti moonscape
+    photo: "https://images.unsplash.com/photo-1592549585866-486f81563f1d?w=900&q=80",
   },
   {
     day: 4,
@@ -229,13 +267,15 @@ var days = [
     dateObj: new Date("2026-06-30"),
     location: "Tabo → Dhankar → Kaza",
     signal: false,
-    teaser: "Dhankar monastery is literally hanging off a cliff. I have questions about the architect.",
-    note: `<p>Dhankar Monastery is built into a cliff face about 500 metres above the valley. It's been there for 1,200 years and looks like it's making a choice to stay. I'll probably stand there and feel very small and also very glad you made me a muffler.</p>
-<p>Kaza is the main town — there are cafes and a small market and apparently very good maggi. The kind of place where the world just sort of ends and someone set up a bakery there anyway, which feels correct.</p>
+    teaser: "Kaza todayyy. Cafes, mountains, maggi and probably me missing you in all 4 places simultaneously, probably kya definitely bhai (I am not your yaarrr..)",
+    note: `<p>Dhankar monastery today. This thing is literally hanging on a cliff btw. Its built into a cliff face about 500 metres above the valley. It's been there for 1,200 years and looks like it's making a choice to stay. I'll probably stand there and feel very small.</p>
+<p>And then Kaza. chhotu cafes in the middle of mountains, random bakeries, maggi, coffee, full your-type place honestly. The way you get excited about cafes, mujhe bhi enthu bana diya. aosa caramel popcorn coffee yaad aa gaya. my cutu popcorn </p>
 <p>You randomly massage my back when you notice I'm tired before I've noticed it myself. I was probably very tired today. I noticed the absence of that. Love is mostly in the small things. I keep thinking about that out here.</p>`,
-    wish: `I wish I could come back to the room and find you sitting cross-legged on the bed, completely absorbed in your crochet, counting stitches under your breath — and then look up at me and lose count. Honestly I would 100% be worth it.`,
-    memory: `That place in Udaipur — folk songs, mehfil, I can never remember the name, you'll know which one — ask me when I'm back and I'll try to describe it and fail, and then you'll remember it immediately. We took that photo in the lift. I stole a kiss. You were technically annoyed. Technically. One of my all-time favourites.`,
-    mission: `10 minutes of crochet. Just 10. And then if you feel like going further, go further. Make something while I'm gone. I want to ask you about it when I'm back.`
+    wish: `I wish you were here sitting in some tiny Kaza cafe with me. Tum coffee order karti dono ke liye ek safe and ek new try ofc, cutieee. And and and I am sure tu pura time cab mai baithke crochet karti aur mai count disturb karta heheh`,
+    memory: `That Udaipur place with the folk songs and mehfill, I forgor the name but you'll definitely remember it - tipsy songs and youuu besttt combo.<br><br>And that mirror selfie we took in the elevator is still one of the cutest pictures ever. Also I absolutely cannot forget stealing that kiss in the elevator after checking around for cameras first ofc`,
+    mission: `10 min crochet karo today sweetie. Bas 10. And send me progress pic. I already know mera wajah se count bhool jaogi hehe`,
+    // Dhankar monastery cliffside Spiti valley
+    photo: "https://images.unsplash.com/photo-1628172648524-e10e4e7a0ca0?w=900&q=80",
   },
   {
     day: 5,
@@ -243,13 +283,14 @@ var days = [
     dateObj: new Date("2026-07-01"),
     location: "Kaza — Local Day",
     signal: false,
-    teaser: "The highlight day, apparently. I'm in four places and thinking about one person.",
-    note: `<p>Key Monastery is at 4,000 metres overlooking the whole Spiti valley — white and stacked, looks like someone built it there on purpose which I think is the idea. Kibber, Hikkim, Langza — I'm supposed to send a postcard from Hikkim which is the highest post office in the world. I will probably write something embarrassing on it. You'll receive it in three weeks when I'm already back and it'll be anticlimactic and perfect.</p>
-<p>I keep thinking about street smart. Our thing. That energy we have when we figure something out together — a booking that almost didn't work, a wrong train that somehow became the right one. Nobody can tell us anything. We just move. I miss my co-conspirator.</p>
-<p>I'm proud of you, Itika. In a very specific, I-know-what-it-took way. I don't say it enough in person. So I'm saying it here, from 4,000 metres, where you can't interrupt me or change the subject.</p>`,
-    wish: `I wish you were here so you could go look for crafts and crockery in that small Kaza market. You'd find something specific and wonderful and completely impractical. I know this about you.`,
-    memory: `Pandit Kulfi in Jaipur. The look on your face. The immediate "why is Mumbai kulfi like that when THIS exists." I have not forgotten this. We are going back for that kulfi. This is not up for discussion.`,
-    mission: `Look up Spiti Valley. Find one photo that makes you stop scrolling. Save it. Show me when I'm back and tell me what it was about it. I want to know if we'd stop at the same one.`
+    teaser: "Main character day today apparently pura din idhar udhar ghoomna hain and obviously har jagah tumhari yaad aani hain.",
+    note: `<p>Key Monastery is at 4,000 metres overlooking the whole Spiti valley — white and stacked, looks like someone built it there on purpose which I think is the idea. Kibber, Hikkim, Langza — Key Monastery is at 4,000 metres overlooking the whole Spiti valley — white and stacked, looks unreal honestly.</p>
+<p>Main character se yaad aaya bacchu if I am a main character, its you I want to be main character baby. I want to spend every day of my life with you, and I mean it, even tho I am writing this now, before the trip, this is the same thing I am gonna thing on the each day</p>`,
+    wish: `I wish you were here bubu. You would've already found some crockery here and crafts pata nahi kya kya.. ekdumn dadi habits aur ghar le aati hehe`,
+    memory: `Pandit Kulfi yaad aa gaya 😭 the way your whole face changed after first bite. "Mumbai me aisi kulfi kyu nahi milti??" full offended mode. Baby genuinely looked betrayed by Mumbai that day hhaha.`,
+    mission: `Pick any place we've gone together and send me the dumbest joke we laughed at there`,
+    // Key Monastery hilltop Spiti
+    photo: "https://images.unsplash.com/photo-1631889993959-41b4e9c6e3c5?w=900&q=80",
   },
   {
     day: 6,
@@ -257,13 +298,15 @@ var days = [
     dateObj: new Date("2026-07-02"),
     location: "Kaza → Chandratal Lake",
     signal: false,
-    teaser: "The Moon Lake. The one I've been most excited about. You'll understand when you read this.",
-    note: `<p>Chandratal. Chandra — moon. A glacial lake at 4,300 metres shaped like a crescent. The water is supposed to shift between blue and green depending on the light — neither colour makes complete sense at that altitude. We're camping here tonight. Actual tents, actual stars, zero light pollution.</p>
-<p>The Milky Way is apparently visible from here on a clear night. Just — visible. With your eyes. I know you. I know exactly what you'd do. You'd tilt your head back and go completely quiet and stay like that for a long time and I'd watch you and not say anything because that's the right call.</p>
-<p>I want to take you somewhere with a sky like this someday. We've talked about it — one day, when we actually plan it properly. This is me putting it on record: I'm already thinking about it.</p>`,
-    wish: `I wish you were here with me at these camps, looking at this sky, looking at each other. I would not say anything. I would just be very glad you were there.`,
-    memory: `Bahubali Hills, Udaipur. Sunrise. We had maybe 3 hours of sleep, up at 5am, reached by 7, both barely conscious. Maggi at the top. The city below in that blue-gold early light. You were half asleep and still the best thing in the view. I thought that and didn't say it and I'm saying it now.`,
-    mission: `Make yourself a coffee. A good one, the way you actually like it. Sit somewhere comfortable. Send me a picture of the mug. That's it. That's the mission.`
+    teaser: "Chandratal todayyy. Moon lake baby. tumhari bangkok vali photo yaad aa gayi",
+    note: `<p>Chandratal. A glacial lake at 4,300 metres shaped like a crescent. The water is supposed to shift between blue and green depending on the light — neither colour makes complete sense at that altitude. We're camping here tonight. Actual tents, actual stars, zero light pollution.</p>
+<p>The Milky Way is supposed to be visible from here on a clear night (mera naseeb pata hain tumko). Tum yahah toh, you'd tilt your head back and go completely quiet and stay like that for a long time and I'd watch you and not say anything</p>
+<p>This is so our type of place. Cold weather. Hoodies. Coffee. Quiet vibes. Random deep talks start ho jaate yaha with you. Water baby ho aur lake dekh ke toh aur pagla jaati hehe</p>`,
+    wish: `I wish you were here with me at these camps. Dono tent ke bahar baithke sky dekhte, tu random constellation bana deti jo actually exist bhi nahi karta and confidently bolti "baby trust me this is real"`,
+    memory: `Bahubali Hills yaad aa gaya 😭 We were running on like 3 hours sleep, pura bheed tha udhar and somehow still peace mil gaya tha. <br><br>And ALSO. "Do logo ke liye nahi chal sakta baby mai." 😭😭 <br><br>I still laugh thinking about that line. Guess where I said it chal.`,
+    mission: `Make yourself a coffee. A good one, the way you actually like it. Sit somewhere comfortable. Send me a picture of the mug. That's it. That's the mission.`,
+    // Chandratal lake crescent moon lake Spiti night stars
+    photo: "https://images.unsplash.com/photo-1626621386606-8fa5e4a60041?w=900&q=80",
   },
   {
     day: 7,
@@ -271,13 +314,15 @@ var days = [
     dateObj: new Date("2026-07-03"),
     location: "Chandratal → Manali",
     signal: true,
-    teaser: "Signal is back. Which means you're probably already reading my panicked texts. I'm fine. It was beautiful.",
+    teaser: "SIGNAL IS BACK BABYYYY. Tumhare phone pe ab tak mere 27 texts aa chuke honge hehehe",
     note: `<p>Manali means signal. Which means I've probably already called you or texted you something long and incoherent at the first bar of connectivity. I regret nothing.</p>
 <p>The drive out of Spiti is through Rohtang Pass — rough roads turning suddenly smooth, mountains giving way to green valleys and waterfalls, clouds that were above you are now beside you. And then Manali, which is warm and has trees and feels like a completely different planet from where I've been.</p>
-<p>Eight days. I wrote to you every single morning and it made every day better. You were in all of it, Itika — the rivers and the monasteries and the freezing nights and the ridiculous sky at Chandratal. Love of my life, you were in all of it. I mean that in the least cringe way possible. You know what I mean.</p>`,
-    wish: `I wish I could have teleported to you for about 20 minutes somewhere around Day 4 just to give you a hug and come back. That's all. The hug specifically.`,
-    memory: `Zostel Lonavala. That lakeside lunch. The completely spontaneous dancing and singing. Swimming. Everything easy and stupid and fun. That's us at our best — no plan, just going. We have so many more of those ahead. I'm keeping count.`,
-    mission: `Pick up when I call. That's the whole mission. Pick up.`
+<p>Eight days. I wrote to you every single morning and it made every day better. You were in all of it, ita — the rivers and the monasteries and the freezing nights and the ridiculous sky at Chandratal. Baby, you were somehow part of all of it.</p>`,
+    wish: `I lowkey wish tu teleport ho paati idhar. I wanna hug you babyyyy..`,
+    memory: `Zostel Lonavala yaad aa gaya 😭 lakeside lunch, random dancing, swimming, pura no thoughts just vibes energy. I love us!!`,
+    mission: `Pick up when I call. Bas. Bohot important mission hain ye 😭`,
+    // Manali Rohtang valley green waterfalls
+    photo: "https://images.unsplash.com/photo-1605649488812-3ffb2b27b7ac?w=900&q=80",
   },
   {
     day: 8,
@@ -285,22 +330,41 @@ var days = [
     dateObj: new Date("2026-07-04"),
     location: "Manali → Chandigarh",
     signal: true,
-    teaser: "The long drive back. Counting down. The mountains are getting smaller in the mirror.",
+    teaser: "Last day babyyy. Mountains peeche reh rahe hain and ab bas ghar aana hain tumhare paas 😭",
     note: `<p>Manali to Chandigarh is almost 300km. Long drive. I'm watching the mountains shrink in the rearview and feeling two things at the same time — that ache of leaving something extraordinary, and a much louder pull toward home. Toward you.</p>
-<p>I'm going to talk so much when I'm back. Every monastery and river and bad road and freezing morning and impossible Chandratal sky. I'm going to make you look at every photo. You're going to say "okay I get it, mountains, wow, beautiful" and I'm going to keep going. You'll love it. You'll pretend you don't.</p>
+<p>I'm going to talk so much when I'm back. Every monastery and river and bad road and freezing morning and impossible Chandratal sky. I'm going to make you look at every photo. And when I'm back bubu, I already know what's going to happen.<br>You're going to sit with that curious face and make me tell you every tiny detail from the trip properly 😭</p>
 <p>Train boards tonight. Home by midnight on the 5th. Count down with me.</p>`,
-    wish: `I wish midnight were sooner. I wish you knew — across all of this — how much.`,
+    wish: `Wish midnight jaldi aa jaaye bas, jaldi ghar aau tere paas. Missing you properly now baccha`,
     memory: `All of it. Everything we've ever done together. And now I get to tell you about Spiti in person, which is genuinely a gift for me because you're going to have to sit there and listen. I'm very excited about this.`,
-    mission: `Send me a fit check. Right now. I want to know what you're wearing when I come home. This is important information.`
+    mission: `You do you hehe`,
+    // Mountain road winding highway looking back sunset
+    photo: "https://images.unsplash.com/photo-1580289143186-03f54224aad6?w=900&q=80",
   }
+];
+
+var songLyrics = [
+  { title: "tu aisa kaise hai ♪", line1: "तेरे साथ सब कुछ इतना आसान कैसे है?", line2: "मुझे अपना घर मिल जाता है तुझ में..." },
+  { title: "arz kiya hai ♪", line1: "तेरे बिना मैं कुछ भी नहीं, कुछ भी नहीं यारा...", line2: "तुझको लिखी है ये कहानी, कहानी मेरी..." },
+  { title: "khat ♪", line1: "जो तेरे संग बीती वो शामें मेरी...", line2: "लिख रहा हूँ आज फिर तुझे..." }
 ];
 
 function render() {
   var today = getToday();
+
+  // Song strip
+  var songIndex = Math.abs(daysDiff(today, new Date("2026-06-27"))) % songLyrics.length;
+  var currentSong = songLyrics[songIndex];
+  var titleEl = document.getElementById("song-title");
+  var line1El = document.getElementById("song-line-1");
+  var line2El = document.getElementById("song-line-2");
+  if (titleEl) titleEl.textContent = currentSong.title;
+  if (line1El) line1El.textContent = currentSong.line1;
+  if (line2El) line2El.textContent = currentSong.line2;
+
   var container = document.getElementById("days-container");
   container.innerHTML = "";
 
-  days.forEach(function(d, i) {
+  days.forEach(function(d) {
     var diff = daysDiff(d.dateObj, today);
     var unlocked = diff >= 0;
     var isToday = diff === 0;
@@ -315,9 +379,7 @@ function render() {
     html += "</div>";
     html += '<div class="day-right">';
     html += '<span class="day-date-pill">' + d.date + "</span>";
-    var signalLabel = d.signal ? "signal ✓" : "no signal";
-    var signalClass = d.signal ? "signal-pill signal-yes" : "signal-pill signal-no";
-    html += '<span class="' + signalClass + '">' + signalLabel + "</span>";
+    html += '<span class="' + (d.signal ? "signal-pill signal-yes" : "signal-pill signal-no") + '">' + (d.signal ? "signal ✓" : "no signal") + "</span>";
     if (isToday) html += '<span class="today-badge">TODAY ✦</span>';
     html += "</div>";
     if (unlocked) {
@@ -327,13 +389,13 @@ function render() {
 
     if (unlocked) {
       html += '<p class="day-teaser">' + d.teaser + "</p>";
-      html += '<div class="day-body">';
-      html += '<div class="photo-slot"><div class="photo-slot-placeholder"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#A8A29E" stroke-width="1.5" stroke-linecap="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg><span class="photo-slot-label">📸 photo from ' + d.location + " — coming soon</span></div></div>";
+      html += '<div class="day-body-wrapper"><div class="day-body-inner"><div class="day-body">';
+      html += '<div class="photo-slot"><img src="' + d.photo + '" alt="' + d.location + '" loading="lazy"></div>';
       html += '<div class="note-block">' + d.note + "</div>";
       html += '<div class="wish-block"><strong>✦ if you were here</strong>' + d.wish + "</div>";
       html += '<div class="memory-block"><div class="memory-label">↩ a memory from us</div><p>' + d.memory + "</p></div>";
       html += '<div class="mission-block"><div class="mission-label">★ your mission today</div><p>' + d.mission + "</p></div>";
-      html += "</div>";
+      html += "</div></div></div>";
     } else {
       html += '<div class="locked-label"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>opens on ' + d.date + "</div>";
     }
@@ -341,14 +403,25 @@ function render() {
     card.innerHTML = html;
     container.appendChild(card);
 
+    // Staggered scroll-in animation
+    setTimeout(function(c) {
+      return function() { c.classList.add("visible"); };
+    }(card), 100 + d.day * 80);
+
+    // Auto-open today's card
     if (isToday) {
-      setTimeout(function() {
-        card.classList.add("open");
-        card.scrollIntoView({ behavior: "smooth", block: "start" });
-      }, 600);
+      setTimeout(function(c) {
+        return function() {
+          c.classList.add("open");
+          setTimeout(function() {
+            c.scrollIntoView({ behavior: "smooth", block: "start" });
+          }, 300);
+        };
+      }(card), 900);
     }
   });
 
+  // Hero date label
   var opts = { weekday: "long", day: "numeric", month: "long" };
   var label = document.getElementById("hero-date-label");
   if (label) label.textContent = today.toLocaleDateString("en-IN", opts);
@@ -359,6 +432,7 @@ function toggleCard(header) {
   card.classList.toggle("open");
 }
 
+// Preview bar — REMOVE THIS BLOCK BEFORE SHARING
 (function() {
   var bar = document.createElement("div");
   bar.id = "preview-bar";
@@ -377,11 +451,10 @@ function toggleCard(header) {
     "</select>" +
     '<button onclick="document.getElementById(\'preview-bar\').style.display=\'none\'">✕ close</button>';
   document.body.appendChild(bar);
-
   document.getElementById("pv-select").addEventListener("change", function() {
     window._previewDate = this.value ? this.value + "T12:00:00" : null;
     render();
-    window.scrollTo({ top: 0, behavior: "smooth" });
+    window.scrollTo({ behavior: "smooth", top: 0 });
   });
 })();
 
