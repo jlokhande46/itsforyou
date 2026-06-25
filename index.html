@@ -90,9 +90,6 @@ body { font-family: 'Inter', sans-serif; background: var(--cream); color: var(--
 .day-right { display: flex; flex-direction: column; align-items: flex-end; gap: 6px; flex-shrink: 0; }
 .day-date-pill { font-size: 12px; font-weight: 500; color: var(--accent); background: var(--accent-light); padding: 4px 12px; border-radius: 100px; white-space: nowrap; }
 .today-badge { font-size: 11px; color: var(--accent); font-weight: 600; letter-spacing: 0.06em; }
-.signal-pill { font-size: 10px; font-weight: 500; padding: 2px 8px; border-radius: 100px; white-space: nowrap; }
-.signal-yes { background: #E6EDE5; color: #4A6741; }
-.signal-no { background: #F5E6D3; color: #C2773A; }
 .chevron { color: var(--ink-faint); transition: transform 0.3s cubic-bezier(0.4,0,0.2,1); flex-shrink: 0; margin-top: 6px; }
 .day-card.open .chevron { transform: rotate(180deg); }
 
@@ -218,9 +215,8 @@ var days = [
     date: "27 Jun",
     dateObj: new Date("2026-06-27"),
     location: "Sangla Valley",
-    signal: true,
-    teaser: "First morning in the mountains. Might still have signal today — so if you got a random text at 7am, that was me. Ofc aadat hain na tumko subeh pareshaan karne ki",
-    note: `<p>So. Sangla. I will probably have some signal today and by the time you're reading this I've already texted you something completely unhinged, blabbered somthing hihihi </p>
+    teaser: "First mountain morning. Already feels like one of those days I'll keep talking about for a long time.",
+    note: `<p>So. Sangla. By the time you're reading this I'm probably standing somewhere near the Baspa river wondering how water can actually look like this. Also knowing me, I've probably already blabbered something random to you in my head hihihi.</p>
 <p>But here's what I'm guessing the morning looks like from everything I've read: the Baspa river will probably be this turquoise green(AI hain mujhe ghanta nahi pata ye konsa colour hain) that doesn't feel real — like someone decided water should be that colour and didn't consult anyone (waah kya fek raha hain). Pine forests going up both sides. Snow on the peaks. The kind of silence that isn't quiet, it just sounds different. (full Kevindra Chopra vibes, aake batata hoon aise he tha kya tho)</p>
 <p>Whenevr I see a breathtaking scenery, I'm going to stand there and think you need to see this. fr. Specifically you. Not in a general "this is beautiful" way — in the very specific way where I know you'd go completely quiet for a full minute and I'd watch you instead of the view. The same way we watched the Sunset together at Karni Mata and I wanted you ;) </p>`,
     wish: `Bubu, I wish you were here so I could see your face when you first see this valley. Bas itna hain.. thats the whole wish`,
@@ -234,11 +230,10 @@ var days = [
     date: "28 Jun",
     dateObj: new Date("2026-06-28"),
     location: "Chitkul & Kalpa",
-    signal: false,
-    teaser: "Signal dies after Kalpa. So this is where I officially disappear. Don't panic sshhhhhh. Bich bich me aayega signal I hope tumko pareshaan karne",
+    teaser: "Last green valley before Spiti starts changing completely. I have a feeling today is going to be beautiful.",
     note: `<p>Chitkul is the last inhabited village before the Tibet border. There's a signboard that literally says it. I'll probably stand there thinking, oh this is the edge of India and I will have the muffler you made me, which I'm very much wearing because it's freezing, and that'll make it better. It will give me the feelin of having you around me</p>
 <p>Kalpa in the evening has Kinnaur Kailash right across the valley, this massive wall of snow and rock that just <em>appears</em> when the clouds shift ( I hope shift ho jaaye varna toh Mandalpatti scenes). Apparently the mountains turn orange then pink then purple at sunset (you know the gist right, after part of sunset). I would be lying if I said I won't be missing you in that very moment. I'll be standing there in the muffler you made me, watching a mountain turn colours and thinking about you. You did this. You made me sentimental about sunsets baby.</p>`,
-    wish: `I wish I could call you right now and just turn the camera around. No explanation. Just look at this. You'd get it.`,
+    wish: `I wish you were standing next to me. No explanation needed. We'd probably just look at the mountains and smile like idiots.`,
     memory: `Inhabited se yaad aaya, the soy milk spaghetti from chef Ita, because why not, bechari baby was soo irritated ye kya bana diya, picky eater is what we got from that dish lol. I'll also be missing your aglio olio spaghetti, just so you know. jald he aake khaunga tere haathon se..`,
     mission: `Make spaghetti. Whenever you feel like it, today, tomorrow, whenever. Your way. Send me a picture. I will see it when I'm back and I will be jealous, and I will not say I'm jealous, and you will know anyway.`,
     // Chitkul last village — snow peaks Kinnaur
@@ -249,8 +244,7 @@ var days = [
     date: "29 Jun",
     dateObj: new Date("2026-06-29"),
     location: "Kalpa → Nako → Tabo",
-    signal: false,
-    teaser: "No signal at all now. Full gayab, tumse imaginary baatein kar raha hoon at this point :')",
+    teaser: "Today feels like the world suddenly becomes much quieter.",
     note: `<p>Today is apparently where Spiti starts looking fully different. Green hills khatam, cold desert start. AI photos me toh crazy lag raha hain, asli me kaisa lagega dekhke aata hoon.</p>
 <p>Nako lake is also today. Small peaceful lake apparently. And idk why but still lakes immediately remind me of Fatehsagar now(also Pinchola). That night especially. Just us sitting and talking serious shit, childhood stories, everything together. Maza aaya tha yaar baby</p>
 <p>And I think that's my favourite thing about us honestly. We can literally sit somewhere quietly and still have the best time. And I'm saying it from a 100 saal purana monastery btw?? because apparently this is the only place I want to admit it.</p>
@@ -297,12 +291,11 @@ var days = [
     date: "2 Jul",
     dateObj: new Date("2026-07-02"),
     location: "Kaza → Chandratal Lake",
-    signal: false,
     teaser: "Chandratal todayyy. Moon lake baby. tumhari bangkok vali photo yaad aa gayi",
-    note: `<p>Chandratal. A glacial lake at 4,300 metres shaped like a crescent. The water is supposed to shift between blue and green depending on the light — neither colour makes complete sense at that altitude. We're camping here tonight. Actual tents, actual stars, zero light pollution.</p>
+    note: `<p>Chandratal. A glacial lake at 4,300 metres shaped like a crescent. The water is supposed to shift between blue and green depending on the light — neither colour makes complete sense at that altitude. We'll probably spend some time by the lake before heading back. I already know leaving this place is going to hurt a little.</p>
 <p>The Milky Way is supposed to be visible from here on a clear night (mera naseeb pata hain tumko). Tum yahah toh, you'd tilt your head back and go completely quiet and stay like that for a long time and I'd watch you and not say anything</p>
 <p>This is so our type of place. Cold weather. Hoodies. Coffee. Quiet vibes. Random deep talks start ho jaate yaha with you. Water baby ho aur lake dekh ke toh aur pagla jaati hehe</p>`,
-    wish: `I wish you were here with me at these camps. Dono tent ke bahar baithke sky dekhte, tu random constellation bana deti jo actually exist bhi nahi karta and confidently bolti "baby trust me this is real"`,
+    wish: `I wish you were sitting next to me by the lake. Hoodie pehenke, coffee haath me, aur bina kisi reason ke bas paani dekhte rehte.`,
     memory: `Bahubali Hills yaad aa gaya 😭 We were running on like 3 hours sleep, pura bheed tha udhar and somehow still peace mil gaya tha. <br><br>And ALSO. "Do logo ke liye nahi chal sakta baby mai." 😭😭 <br><br>I still laugh thinking about that line. Guess where I said it chal.`,
     mission: `Make yourself a coffee. A good one, the way you actually like it. Sit somewhere comfortable. Send me a picture of the mug. That's it. That's the mission.`,
     // Chandratal lake crescent moon lake Spiti night stars
@@ -313,9 +306,8 @@ var days = [
     date: "3 Jul",
     dateObj: new Date("2026-07-03"),
     location: "Chandratal → Manali",
-    signal: true,
-    teaser: "SIGNAL IS BACK BABYYYY. Tumhare phone pe ab tak mere 27 texts aa chuke honge hehehe",
-    note: `<p>Manali means signal. Which means I've probably already called you or texted you something long and incoherent at the first bar of connectivity. I regret nothing.</p>
+    teaser: "Green trees again. Feels weird after staring at mountains and cold desert for so many days 😭",
+    note: `<p>Manali almost feels like a different country after the last few days. Trees are back. Waterfalls are everywhere. Everything suddenly looks so green again. It honestly feels a little strange after Spiti.</p>
 <p>The drive out of Spiti is through Rohtang Pass — rough roads turning suddenly smooth, mountains giving way to green valleys and waterfalls, clouds that were above you are now beside you. And then Manali, which is warm and has trees and feels like a completely different planet from where I've been.</p>
 <p>Eight days. I wrote to you every single morning and it made every day better. You were in all of it, ita — the rivers and the monasteries and the freezing nights and the ridiculous sky at Chandratal. Baby, you were somehow part of all of it.</p>`,
     wish: `I lowkey wish tu teleport ho paati idhar. I wanna hug you babyyyy..`,
@@ -379,7 +371,6 @@ function render() {
     html += "</div>";
     html += '<div class="day-right">';
     html += '<span class="day-date-pill">' + d.date + "</span>";
-    html += '<span class="' + (d.signal ? "signal-pill signal-yes" : "signal-pill signal-no") + '">' + (d.signal ? "signal ✓" : "no signal") + "</span>";
     if (isToday) html += '<span class="today-badge">TODAY ✦</span>';
     html += "</div>";
     if (unlocked) {
